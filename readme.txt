@@ -8,9 +8,10 @@ Goals --------------------------------------------------------------------
     from scratch, without using relevant libraries such as python-rsa or
     cryptography (fernet). The reasoning behind this choice was two-fold:
     (1) first, it provided an academic opportunity to gain a deeper 
-    understanding of asymmetric encryption algorithms, and to develop
-    preexisting interests in cybersecurity; (2) second, it allowed
-    allowed me to develop skills and intuition coding in Python.
+    understanding of asymmetric encryption algorithms as a method of
+    encrypting symmetric keys, and to further develop preexisting interests 
+    in cybersecurity; (2) second, it allowed me to develop skills and 
+    intuition coding in Python.
 
 Contents -----------------------------------------------------------------
 
