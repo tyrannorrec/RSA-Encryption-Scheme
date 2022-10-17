@@ -1,17 +1,16 @@
-CS5001-5003, Spring 2022
-Final Project (readme.txt)
 Norrec Nieh
 
            #####   RSA Encryption Scheme Implementation   #####
 
 Goals --------------------------------------------------------------------
 
-    My CS5001 final project is an implementation of the RSA encryption scheme
+    This project is an implementation of the RSA encryption scheme
     from scratch, without using relevant libraries such as python-rsa or
     cryptography (fernet). The reasoning behind this choice was two-fold:
-    (1) first, it provided an opportunity to converge material encountered
-    in both CS5001 and CS5002; (2) second, it allowed me to further develop
-    my preexisting interests in cybersecurity / cryptography.
+    (1) first, it provided an academic opportunity to gain a deeper 
+    understanding of asymmetric encryption algorithms, and to develop
+    preexisting interests in cybersecurity; (2) second, it allowed
+    allowed me to develop skills and intuition coding in Python.
 
 Contents -----------------------------------------------------------------
 
@@ -59,34 +58,7 @@ Contents -----------------------------------------------------------------
         > /keys
             - will contain private_key.pem and public_key.pem.
             - Running encrypt.py writes/overwrites both keys.
-
-
-Tools & Techniques -------------------------------------------------------
-
-    > Defensive programming and file management. Used try/except blocks,
-      while loops, and conditionals to prevent unexpected errors.
-
-    > Classes and objects. Implemented RSAKey as a class, where each object
-      represents an instance of a public/private key pair.
-
-    > Recursion. The extended_euclid method in the RSAKey class uses recursion
-      to return the gcd of two numbers as well as its linear combination.
-
-    > Efficiency. Exponentiation methods found in the RSAKey class needed to be
-      efficient in order to handle very large numbers.
-
-    > Code organization. Separated functionalities into modules, depending on
-      which functions/methods would be called on by other modules.
-
-    > Built-in libraries: read documentation for and used new preexisting
-      libraries, including secrets, base64, ast, and math.
-
-    > Documentation. Program was dense enough that comments were needed to
-      keep the code clear for future reference.
-
-    > Testing. Wrote a test suite exhibiting each step of the program,
-      printing intermediary values, encrypted text, and comparisons of original
-      and decrypted text.
+            
 
 Challenges & Takeaways ----------------------------------------------------
 
@@ -100,7 +72,7 @@ Challenges & Takeaways ----------------------------------------------------
       As a solution, I used defensive programming to limit the bit size of the
       file to be encrypted, in proportion to the key size.
 
-    > Primality testing. I learned about algorithms and theory underlying the
+    > Primality testing. Learned about algorithms and theory underlying the
       Fermat and Miller-Rabin tests, including their treatment of Carmichael
       numbers (Lynn). I eventually implemented the Miller-Rabin test within the
       RSAKey class as a method, based on theory and pseudocode found in my
@@ -108,33 +80,20 @@ Challenges & Takeaways ----------------------------------------------------
       number of times the test had to be run on a single number to adequately
       reduce the probability of it being a false positive (Pornin).
 
-    > Key storage. Without deeper knowledge of networking and SSH protocols,
-      I had difficulty managing the proper storage of public and private keys
-      generated during encryption. I mimicked the format of a .pem file to
-      store the keys, but effectively parsed those files as if they were .txt
-      files, since I could not implement a way to sign the .pem certificates.
+    > Key storage. Within the given time for the project, I was not able to 
+      simulate proper storage of public and private keys generated during 
+      encryption. I mimicked the format of a .pem file to store the keys, 
+      but effectively parsed those files as if they were .txt files.
       This also meant that my current key storage mechanism is unsafe, and is
       acting primarily only as a string representation of the contents of a
       proper key file. Furthermore, generating a new key pair overwrites the
       previous pair by default, so there is no way in my current implementation
       to have two keys at the same time, or to identify one key from another.
 
-    > Python classes. I learned about how Python classes work differently than
-      other OOP languages, specifically in the realm of private and public
-      methods, as well as how it treats static methods. I implemented my
-      static methods with the @staticmethod flag, but wonder if it would have
-      been cleaner/better to make a static "Utility" class from which to call
-      those methods.
-
     > Efficiency. The general efficiency of my Keygen module is not ideal, such
       that scaling my RSA key size to 4096 bits has been made impossible. Again,
       working with such large numbers made clear how important it was to reduce
       unnecessary overhead.
-
-    > Organizing code. This project drove home the importance of proper file
-      management and documentation, if only due to the large number of elements
-      working in tandem. I found that the more I documented, the easier it was
-      to find something I needed, to refactor code or to debug a faulty function.
 
 Future Extensions --------------------------------------------------------
 
