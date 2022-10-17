@@ -1,0 +1,3 @@
+-----BEGIN DECRYPTED MESSAGE-----
+* The quick brown fox jumps over the lazy dog. *
+-----END DECRYPTED MESSAGE-----
